@@ -1,0 +1,26 @@
+body {
+    background-color: #F9FAFC;
+}
+
+nav {
+    background-color: #231e20;
+    color: #f8f2f4;
+}
+
+.link-bright {
+    color: #f8f2f4;
+}
+
+.link-bright:hover,
+.link-bright:active {
+    color: #aa7282;
+}
+
+.active {
+    font-weight: 700;
+}
+
+footer {
+    background-color: #231e20;
+    color: #f8f2f4;
+}
