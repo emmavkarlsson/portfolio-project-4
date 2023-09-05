@@ -7,6 +7,16 @@ nav {
     color: #f8f2f4;
 }
 
+a {
+    color: #aa7282;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: #aa7282;
+}
+
 .link-bright {
     color: #f8f2f4;
 }
@@ -22,6 +32,17 @@ nav {
 
 .post-link {
     text-decoration: none;
+    color: #aa7282;
+}
+
+.btn-signin {
+    background-color: #aa7282;
+    color: #f8f2f4;
+}
+
+.btn-signin:hover,
+.btn-signin:active {
+    background-color: #f8f2f4;
     color: #aa7282;
 }
 
