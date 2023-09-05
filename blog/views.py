@@ -80,7 +80,6 @@ class PostLike(View):
 
 
 class AddImage(generic.CreateView):
-    model = Post
     form_class = PostForm
     template_name = 'add_image.html'
 
