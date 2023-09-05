@@ -95,5 +95,18 @@ class DeletePost(generic.DeleteView):
     model = Post
     template_name = 'delete_post.html'
 
-    def delete_image(self, request, *args, **kwargs):
+    def delete(self, request, *args, **kwargs):
         return super(DeletePost, self).delete(request, *args, **kwargs)
+
+
+class EditPost(generic.UpdateView):
+    """
+    Allows users to update their posts
+    """
+    model = Post
+    form_class = PostForm
+    template_name = 'edit_post.html'
+
+    def form_valid(self, form):
+        form.instance.publisher = self.request.user
+        return super().form_valid(form)
