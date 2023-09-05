@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic, View
+from django.views import generic, View, CreateView
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
@@ -77,3 +77,13 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('featured_post', args=[slug]))
+
+
+class AddImage(generic.CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'add_image.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
