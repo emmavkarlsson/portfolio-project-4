@@ -32,6 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-emmavkarlss-portfoliopr-hnn4wk8g2ee.ws-eu104.gitpod.io', 'evk-photostream-d1447cc37dcb.herokuapp.com', 'localhost']
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Application definition
 
