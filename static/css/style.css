@@ -35,7 +35,8 @@ a:active {
     color: #aa7282;
 }
 
-.btn-signin {
+.btn-signin,
+.btn-post {
     background-color: #aa7282;
     color: #f8f2f4;
 }
