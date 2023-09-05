@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 mt-3">
+            <p class="text-center mt-3">Are you sure you want to delete?</p>
+            <form class="text-center" method="POST">
+                {%  csrf_token  %}
+                <div>
+                    <button class="" type="submit">Delete</button>
+                    <button><a class="" href="#">Cancel</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
