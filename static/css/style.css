@@ -46,6 +46,12 @@ a:active {
     color: #aa7282;
 }
 
+.btn-like {
+    color: #aa7282;
+    border: none;
+    background: transparent;
+}
+
 footer {
     background-color: #231e20;
     color: #f8f2f4;
