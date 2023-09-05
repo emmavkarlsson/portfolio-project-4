@@ -86,3 +86,14 @@ class AddImage(generic.CreateView):
     def form_valid(self, form):
         form.instance.publisher = self.request.user
         return super().form_valid(form)
+
+
+class DeletePost(generic.DeleteView):
+    """
+    Allows users to delete their own posts
+    """
+    model = Post
+    template_name = 'delete_post.html'
+
+    def delete_image(self, request, *args, **kwargs):
+        return super(DeletePost, self).delete(request, *args, **kwargs)
