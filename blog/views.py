@@ -84,5 +84,5 @@ class AddImage(generic.CreateView):
     template_name = 'add_image.html'
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.publisher = self.request.user
         return super().form_valid(form)
