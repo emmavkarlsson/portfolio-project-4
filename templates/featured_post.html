@@ -1,11 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div">
     <div class="container">
         <div class="row g-0">
             <div class="d-none d-md-block col-md-12">
                 {% if "placeholder" in post.photopost.url %}
-                <img src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1693860102/p8vwzctkppf7vm6njgpv.jpg" width="100%">
+                <img src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1693860102/p8vwzctkppf7vm6njgpv.jpg"
+                    width="100%">
                 {% else %}
                 <img src=" {{ post.photopost.url }}" width="100%">
                 {% endif %}
@@ -28,7 +31,8 @@
                 <div class="row">
 
                     <div class="col-1">
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }}
+                        </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -64,10 +68,19 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later -->
+                {% if user.is_authenticated %}
+
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signin btn-lg">Submit</button>
+                </form>
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-{% endblock content %}
+    {% endblock content %}
