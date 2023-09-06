@@ -121,3 +121,11 @@ class MyPosts(generic.ListView):
 
     def get_queryset(self):
         return Post.objects.filter(publisher=self.request.user)
+
+
+class MyLikedPosts(generic.ListView):
+    model = Post
+    template_name = 'my_likes.html'
+
+    def get_queryset(self):
+        return Post.objects.filter(likes=self.request.user)
