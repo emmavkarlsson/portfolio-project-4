@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in post.photopost.url %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1693860102/p8vwzctkppf7vm6njgpv.jpg">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.photopost.url }}">
+                                {% endif %}
+                            </div>
+                            <a href="{% url 'featured_post' post.slug %}" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
