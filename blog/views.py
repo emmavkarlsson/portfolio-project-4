@@ -115,4 +115,9 @@ class EditPost(generic.UpdateView):
         return super().form_valid(form)
 
 
+class MyPosts(generic.ListView):
+    model = Post
+    template_name = 'my_posts.html'
 
+    def get_queryset(self):
+        return Post.objects.filter(publisher=self.request.user)
