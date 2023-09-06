@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from .models import Post
 from .forms import CommentForm, PostForm
 
@@ -95,6 +96,8 @@ class DeletePost(generic.DeleteView):
     model = Post
     template_name = 'delete_post.html'
 
+    success_url = reverse_lazy('home')
+
     def delete(self, request, *args, **kwargs):
         return super(DeletePost, self).delete(request, *args, **kwargs)
 
@@ -110,3 +113,6 @@ class EditPost(generic.UpdateView):
     def form_valid(self, form):
         form.instance.publisher = self.request.user
         return super().form_valid(form)
+
+
+
