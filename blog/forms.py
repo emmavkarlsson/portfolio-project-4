@@ -1,4 +1,4 @@
-from .models import Comment, Post
+from .models import Comment, Post, Profile
 from django import forms
 from django_summernote.widgets import SummernoteWidget
 
@@ -19,3 +19,12 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'photopost', 'description')
+
+
+class ProfilePictureForm(forms.ModelForm):
+    """
+    Form for profile image update
+    """
+    class Meta:
+        model = Profile
+        fields = ('name', 'profile_picture')
