@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row g-0">
+        <div class="row featured-post-bg">
             <div class="d-none d-md-block col-md-12">
                 {% if "placeholder" in post.photopost.url %}
                 <img src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1693860102/p8vwzctkppf7vm6njgpv.jpg"
@@ -25,17 +25,17 @@
             </div>
             <div class="col-md-12">
                 <h1>{{ post.title }}</h1>
-                <p>{{ post.author }} | {{ post.created_on }}</p>
+                <p>{{ post.publisher }} | {{ post.created_on }}</p>
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left top">
-            <div class="card-body">
-                <p class="card-text ">
+    <div class="row featured-post-bg">
+        <div class="col card">
+            <div class="card-body mb-3">
+                <p class="card-text">
                     {{ post.description | safe }}
                 </p>
                 <div class="row">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                        <strong><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
@@ -67,12 +67,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-    <div class="row">
+    <div class="row featured-post-bg mt-3">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
@@ -80,11 +75,14 @@
                 <div>
                     <p class="font-weight-bold">
                         {{ comment.name }}
-                        <span class=" text-muted">
+                        <span>
                             {{ comment.created_on }}
                         </span> commented:
                     </p>
                     {{ comment.body | linebreaks }}
+                    <div class="row">
+                        <hr>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
@@ -98,7 +96,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signin btn-lg">Submit</button>
+                    <button type="submit" class="btn mt-3 btn-submit">Submit</button>
                 </form>
                 {% endif %}
             </div>

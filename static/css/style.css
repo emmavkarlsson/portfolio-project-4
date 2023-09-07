@@ -30,6 +30,10 @@ a:active {
     font-weight: 700;
 }
 
+.font-weight-bold {
+    font-weight: bold;
+}
+
 .card {
     border: none;
     background-color: transparent;
@@ -72,6 +76,10 @@ a:active {
     font-size: 150%;
     padding-top: 2%;
     text-transform: uppercase;
+}
+
+.featured-post-bg {
+    background-color: #fff;
 }
 
 .btn-signin,
@@ -127,6 +135,16 @@ footer {
     color: #f8f2f4;
 }
 
+.btn-submit {
+    border: 2px solid #aa7282;
+    color: #aa7282;
+    border-radius: 50px;
+}
+
+.btn-submit:hover {
+    color: #f8f2f4;
+    background-color: #aa7282;
+}
 
 /* media queries */
 /* for medium screen devices from 768px wide and down */
