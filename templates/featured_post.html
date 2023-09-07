@@ -2,7 +2,17 @@
 
 {% load crispy_forms_tags %}
 
-<div">
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col mt-4 mb-4 center-buttons">
+                {% if user.is_authenticated and post.publisher == user  %}
+                <a href="{% url 'edit_post' post.slug %}" class="edit-button"><i class="fas fa-pen"></i> Edit</a>
+                <a href="{% url 'delete_post' post.slug %}" class="delete-button"><i class="fas fa-trash"></i> Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row g-0">
             <div class="d-none d-md-block col-md-12">
