@@ -1,25 +1,31 @@
 {% extends "base.html" %}
-
 {% block content %}
+{% load crispy_forms_tags %}
 
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-md-6 mt-3">
             <h2>My profile</h2>
             <div class="row justify-content-center mt-4">
-
+                
                 <div class="col-md-4 text-center">
-                        <a class="" href="{% url 'my_likes' %}"><i class="fas fa-heart"></i></a>
-                        <p>Liked posts</p>
+                    <div class="icon-container">
+                        <a class="" href="{% url 'my_likes' %}"><i class="fas fa-heart profile-icons"></i></a>
+                    </div>
+                    <p>Liked posts</p>
                 </div>
 
                 <div class="col-md-4 text-center">
-                        <a class="" href="{% url 'my_posts' %}"><i class="fas fa-image"></i></a>
-                        <p>My posts</p>
+                    <div class="icon-container">   
+                        <a class="" href="{% url 'my_posts' %}"><i class="fas fa-image profile-icons"></i></a>
+                    </div>
+                    <p>My posts</p>
                 </div>
 
                 <div class="col-md-4 text-center">
-                    <a class="" href="{% url 'add_image' %}"><i class="fas fa-plus"></i></a>
+                    <div class="icon-container">
+                        <a class="" href="{% url 'add_image' %}"><i class="fas fa-plus profile-icons"></i></a>
+                    </div>
                     <p>Add image</p>
                 </div>
 

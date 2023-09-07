@@ -14,7 +14,7 @@ a {
 
 a:hover,
 a:active {
-    color: #aa7282;
+    color: #c9a2ad;
 }
 
 .link-bright {
@@ -109,6 +109,23 @@ a:active {
     border: none;
     background: transparent;
 }
+
+.profile-icons {
+    font-size: 500%;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* .icon-container {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+} */
 
 footer {
     background-color: #231e20;
