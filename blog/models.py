@@ -8,6 +8,13 @@ from django.template.defaultfilters import slugify
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+class Categories(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
@@ -17,6 +24,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='photo_likes', blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    categories = models.ManyToManyField(Categories)
 
     class Meta:
         ordering = ['-created_on']
