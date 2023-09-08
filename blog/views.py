@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post, Comment, Profile
 from .forms import CommentForm, PostForm, ProfilePictureForm
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
@@ -80,38 +82,44 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('featured_post', args=[slug]))
 
 
-class AddImage(generic.CreateView):
+class AddImage(SuccessMessageMixin, generic.CreateView):
     """
     Let's users submit their own posts
     """
     form_class = PostForm
     template_name = 'add_image.html'
+    success_message = 'Your post is awaiting approval!'
 
     def form_valid(self, form):
         form.instance.publisher = self.request.user
         return super().form_valid(form)
 
+    def get_success_message(self, request):
+        return self.success_message
 
-class DeletePost(generic.DeleteView):
+
+class DeletePost(SuccessMessageMixin, generic.DeleteView):
     """
     Allows users to delete their own posts
     """
     model = Post
     template_name = 'delete_post.html'
-
+    success_message = 'Your post has been deleted!'
     success_url = reverse_lazy('home')
 
     def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
         return super(DeletePost, self).delete(request, *args, **kwargs)
 
 
-class EditPost(generic.UpdateView):
+class EditPost(SuccessMessageMixin, generic.UpdateView):
     """
     Allows users to update their posts
     """
     model = Post
     form_class = PostForm
     template_name = 'edit_post.html'
+    success_message = 'Your post was edited successfully!'
 
     def form_valid(self, form):
         form.instance.publisher = self.request.user
@@ -162,5 +170,7 @@ def delete_comment(request, comment_id):
     """
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
+
+    messages.success(request, 'The comment has been deleted.')
 
     return redirect(request.META.get('HTTP_REFERER', 'home'))
