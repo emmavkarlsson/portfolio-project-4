@@ -7,6 +7,10 @@ nav {
     color: #f8f2f4;
 }
 
+.navbar-light {
+    background-color: #f8f2f4;
+}
+
 a {
     color: #aa7282;
     text-decoration: none;
