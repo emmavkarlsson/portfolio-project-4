@@ -131,7 +131,23 @@ class MyLikedPosts(generic.ListView):
         return Post.objects.filter(likes=self.request.user)
 
 
-class MyProfile(generic.ListView):
+def profile_view(request):
+    """
+    Renders the profile page
+    """
+    if request.method == 'POST':
+        profile_form = ProfilePictureForm(
+            request.POST, request.FILES, instance=request.user.profile)
+        if profile_form.is_valid():
+            profile_form.save()
+            return redirect('profile')
+    else:
+        profile_form = ProfilePictureForm(instance=request.user.profile)
 
-    model = Profile
-    template_name = 'profile.html'
+    context = {
+        'profile_form': profile_form,
+    }
+
+    success_url = reverse_lazy('profile')
+
+    return render(request, 'profile.html', context)
