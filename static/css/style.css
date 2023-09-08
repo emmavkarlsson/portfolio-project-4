@@ -44,6 +44,10 @@ a:active {
     font-weight: bold;
 }
 
+.text-small {
+    font-size: 75%;
+}
+
 .card {
     border: none;
     background-color: transparent;
