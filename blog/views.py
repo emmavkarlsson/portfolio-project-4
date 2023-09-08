@@ -2,13 +2,13 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from .models import Post, Profile, Comment
+from .models import Post, Comment, Profile
 from .forms import CommentForm, PostForm, ProfilePictureForm
 
 
 class PostList(generic.ListView):
     model = Post
-    queryset = Post.objects.order_by('-created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 12
 
@@ -16,7 +16,7 @@ class PostList(generic.ListView):
 class FeaturedPost(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects
+        queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.order_by('created_on')
         liked = False
@@ -36,7 +36,7 @@ class FeaturedPost(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects
+        queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.order_by('created_on')
         liked = False
@@ -81,6 +81,9 @@ class PostLike(View):
 
 
 class AddImage(generic.CreateView):
+    """
+    Let's users submit their own posts
+    """
     form_class = PostForm
     template_name = 'add_image.html'
 

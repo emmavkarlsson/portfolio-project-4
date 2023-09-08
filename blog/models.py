@@ -4,7 +4,8 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 from django.template.defaultfilters import slugify
 
-# Create your models here.
+
+STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
@@ -15,6 +16,7 @@ class Post(models.Model):
     description = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='photo_likes', blank=True)
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['-created_on']
@@ -48,7 +50,7 @@ class Comment(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     profile_picture = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
