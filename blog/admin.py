@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Profile
+from .models import Post, Comment, Profile, Categories
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -25,3 +25,8 @@ class ProfileAdmin(admin.ModelAdmin):
     Add fields for profile in admin panel
     """
     list_display = ('user',)
+
+
+@admin.register(Categories)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['name']
