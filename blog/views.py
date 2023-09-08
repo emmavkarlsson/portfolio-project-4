@@ -66,8 +66,6 @@ class FeaturedPost(View):
             }
         )
 
-    
-
 
 class PostLike(View):
 

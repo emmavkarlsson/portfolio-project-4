@@ -53,8 +53,7 @@ a:active {
 }
 
 .card {
-    border: none;
-    background-color: transparent;
+    border: 1px solid #231e20;
 }
 
 .image-container {
