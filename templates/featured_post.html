@@ -67,8 +67,8 @@
             </div>
         </div>
     </div>
-    <div class="row featured-post-bg mt-3">
-        <div class="col-md-8 card mb-4  mt-3 ">
+    <div class="row featured-post-bg mt-3 mb-3">
+        <div class="col-md-8 card mb-3 mt-3">
             <h3>Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}
@@ -80,6 +80,14 @@
                         </span> commented:
                     </p>
                     {{ comment.body | linebreaks }}
+
+                    {% if comment.name == user.username or post.publisher == user %}
+                    <div>
+                        <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger"
+                                aria-label="Delete Comment"><i class=”fas fa-trash”></i></a>
+                    </div>
+                    {% endif %}
+
                     <div class="row">
                         <hr>
                     </div>
@@ -87,7 +95,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-3 mt-3">
             <div class="card-body">
                 {% if user.is_authenticated %}
 

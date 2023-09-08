@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from .models import Post, Profile
+from .models import Post, Profile, Comment
 from .forms import CommentForm, PostForm, ProfilePictureForm
 
 
@@ -65,6 +65,8 @@ class FeaturedPost(View):
                 "comment_form": CommentForm()
             }
         )
+
+    
 
 
 class PostLike(View):
@@ -151,3 +153,13 @@ def profile_view(request):
     success_url = reverse_lazy('profile')
 
     return render(request, 'profile.html', context)
+
+
+def delete_comment(request, comment_id):
+    """
+    Delete comment
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+
+    return redirect(request.META.get('HTTP_REFERER', 'home'))
