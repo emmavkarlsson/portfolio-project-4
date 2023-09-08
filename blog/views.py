@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post, Profile
-from .forms import CommentForm, PostForm
+from .forms import CommentForm, PostForm, ProfilePictureForm
 
 
 class PostList(generic.ListView):
@@ -133,8 +133,5 @@ class MyLikedPosts(generic.ListView):
 
 class MyProfile(generic.ListView):
 
-    model = Post
+    model = Profile
     template_name = 'profile.html'
-
-    # def get_queryset(self):
-    #     return Post.objects.filter(likes=self.request.user)

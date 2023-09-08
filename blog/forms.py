@@ -23,8 +23,8 @@ class PostForm(forms.ModelForm):
 
 class ProfilePictureForm(forms.ModelForm):
     """
-    Form for profile image update
+    Form for name and profile image update
     """
     class Meta:
         model = Profile
-        fields = ('name', 'profile_picture')
+        fields = ['profile_picture', ]
