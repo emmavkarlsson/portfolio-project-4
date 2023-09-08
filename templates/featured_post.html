@@ -46,20 +46,20 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart fp-icons"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart fp-icons"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
-                            <span><i class="far fa-heart"></i></span>
+                            <span><i class="far fa-heart fp-icons"></i></span>
                             {% endif %}
                             <span>{{ post.number_of_likes }}</span>
                         </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
-                        <strong><i class="far fa-comments"></i>
+                        <strong><i class="far fa-comments fp-icons"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
@@ -78,16 +78,14 @@
                         <span>
                             {{ comment.created_on }}
                         </span> commented:
+                        <span style="float: right;">
+                            {% if comment.name == user.username or post.publisher == user %}
+                                <a href="{% url 'delete_comment' comment.id %}" aria-label="Delete Comment"><i
+                                        class="fas fa-trash"></i></a>
+                            {% endif %}
+                        </span>
                     </p>
                     {{ comment.body | linebreaks }}
-
-                    {% if comment.name == user.username or post.publisher == user %}
-                    <div>
-                        <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger"
-                                aria-label="Delete Comment"><i class=”fas fa-trash”></i></a>
-                    </div>
-                    {% endif %}
-
                     <div class="row">
                         <hr>
                     </div>

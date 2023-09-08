@@ -157,7 +157,7 @@ def profile_view(request):
 
 def delete_comment(request, comment_id):
     """
-    Delete comment
+    Let's users delete their comments and comments on their own posts
     """
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()

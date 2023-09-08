@@ -81,6 +81,10 @@ a:active {
     padding-right: 1%;
 }
 
+.fp-icons {
+    font-size: 200%;
+}
+
 .post-link {
     text-decoration: none;
     color: #aa7282;
