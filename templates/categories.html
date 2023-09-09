@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row text-center">
+            {{ cats }} {% for category in category_list %}
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <div class="image-container">
+                            <h3>{{ category.name }}</h3>
+                            <a href="#"><img class="card-img-top" src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1694257400/Ska%CC%88rmavbild_2023-09-09_kl._13.03.06_nipvjp.png" alt="category image"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor%}
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
