@@ -69,6 +69,20 @@ class FeaturedPost(View):
         )
 
 
+def get_context_data(self, *args, **kwargs):
+    category_list = Category.objects.all()
+    context = super(PostList, self).get_context_data(*args, **kwargs)
+    context["category_list"] = category_list
+    return context
+
+
+def categories(request):
+    """
+    Renders the category page
+    """
+    return render(request, 'categories.html')
+
+
 class PostLike(View):
 
     def post(self, request, slug):
