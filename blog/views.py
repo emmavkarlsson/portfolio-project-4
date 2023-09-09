@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from .models import Post, Comment, Profile
+from .models import Post, Comment, Profile, Categories
 from .forms import CommentForm, PostForm, ProfilePictureForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
@@ -69,18 +69,16 @@ class FeaturedPost(View):
         )
 
 
-def get_context_data(self, *args, **kwargs):
-    category_list = Category.objects.all()
-    context = super(PostList, self).get_context_data(*args, **kwargs)
-    context["category_list"] = category_list
-    return context
+class CategoryList(generic.ListView):
+    model = Categories
+    queryset = Categories.objects.all()
+    template_name = 'categories.html'
 
-
-def categories(request):
-    """
-    Renders the category page
-    """
-    return render(request, 'categories.html')
+    def get_context_data(self, *args, **kwargs):
+        category_list = Categories.objects.all()
+        context = super(CategoryList, self).get_context_data(*args, **kwargs)
+        context["category_list"] = category_list
+        return context
 
 
 def category_view(request, cats):
@@ -90,7 +88,7 @@ def category_view(request, cats):
     category_posts = Post.objects.filter(categories__name__contains=cats, status=1)
     return render(request, 'category.html', {
         'cats': cats.title(), 'category': category_posts})
-
+        
 
 class PostLike(View):
 
