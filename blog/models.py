@@ -10,6 +10,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Categories(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    coverphoto = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return self.name
