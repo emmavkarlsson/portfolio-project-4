@@ -26,7 +26,9 @@
 
 <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand link-bright" href="{% url 'home' %}">PhotoStream</a>
+            <span class="nav-logo">
+                <a class="navbar-brand link-bright" href="{% url 'home' %}"><img src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1694295556/photostream_logo_bright_soygfr.png" alt="Photostream Logo" id="logo"></a>
+            </span>
             <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,24 +38,25 @@
                     <li class="nav-item">
                         <a class="nav-link active link-bright" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-bright" href="{% url 'categories' %}">Categories</a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link link-bright" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link link-bright" href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link-bright" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link link-bright" href="{% url 'add_image' %}">+ Add Image</a>
                     </li>
                     {% endif %}
 
                 </ul>
                 {% if user.is_authenticated %}
-                <span class="navbar-text d-flex">
-                    <a class="nav-link link-bright" href="{% url 'profile' %}"><i class="fas fa-user"></i></a>
-                    <span class="mt-2">{{ user.username }}</span>
+                <span class="navbar-text d-flex nav-user">
+                    <a class="nav-link link-bright" href="{% url 'profile' %}"><i class="fas fa-user"></i>
+                        <span>{{ user.username }}</span>
+                    </a>
+                </span>
+                {% else %}
+                <span class="navbar-text d-flex nav-user">
+                    <a class="nav-link link-bright" href="{% url 'account_login' %}">Login</a>
                 </span>
                 {% endif %}
             </div>
@@ -83,15 +86,14 @@
     <footer class="footer mt-auto py-3">
         <p class="m-0 text-center">PhotoStream Inc.</p>
         <p class="m-0 text-center">Follow us:
-            <a href="http://facebook.com" target="_blank" rel="noopener"
-                aria-label="Visit our FaceBook page (opens in a new tab)"><i class="fab fa-facebook ms-3"></i></a>
-            <a href="http://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)"><i
-                    class="fab fa-twitter ms-3"></i></a>
-            <a href="http://youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube page (opens in a new tab)"><i
-                    class="fab fa-youtube ms-3"></i></a>
-            <a href="http://instagram.com" target="_blank" rel="noopener"
-                aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram ms-3"></i></a>
-            </p>
+            <a href="http://facebook.com" target="_blank" rel="noopener" class="link-bright" aria-label="Visit our FaceBook page (opens in a new tab)">
+                <i class="fab fa-facebook ms-3"></i></a>
+            <a href="http://twitter.com" target="_blank" rel="noopener" class="link-bright" aria-label="Visit our Twitter page (opens in a new tab)">
+                <i class="fab fa-twitter ms-3"></i></a>
+            <a href="http://youtube.com" target="_blank" rel="noopener" class="link-bright" aria-label="Visit our Youtube page (opens in a new tab)">
+                <i class="fab fa-youtube ms-3"></i></a>
+            <a href="http://instagram.com" target="_blank" rel="noopener" class="link-bright" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram ms-3"></i></a>
+        </p>
     </footer>
     <script>
         setTimeout(function () {

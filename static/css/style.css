@@ -7,8 +7,20 @@ nav {
     color: #f8f2f4;
 }
 
+#logo {
+    max-width: 120px;
+}
+
 .navbar-light {
     background-color: #f8f2f4;
+}
+
+.nav-logo {
+    padding-left: 2%;
+}
+
+.nav-user {
+    padding-right: 2%;
 }
 
 a {
