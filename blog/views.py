@@ -83,6 +83,15 @@ def categories(request):
     return render(request, 'categories.html')
 
 
+def category_view(request, cats):
+    """
+    Renders views for the different categories
+    """
+    category_posts = Post.objects.filter(categories__name__contains=cats, status=1)
+    return render(request, 'category.html', {
+        'cats': cats.title(), 'category': category_posts})
+
+
 class PostLike(View):
 
     def post(self, request, slug):
