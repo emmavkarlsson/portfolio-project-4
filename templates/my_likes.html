@@ -4,8 +4,6 @@
 
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 <div class="col mb-3">
@@ -24,7 +22,9 @@
                                         src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1693860102/p8vwzctkppf7vm6njgpv.jpg">
                                 </a>
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.photopost.url }}">
+                                <a href="{% url 'featured_post' post.slug %}">
+                                    <img class="card-img-top" src=" {{ post.photopost.url }}">
+                                </a>
                                 {% endif %}
                                 <div class="publisher-background">
                                     <p class="publisher"><i class="fas fa-camera publisher-icon"></i>
