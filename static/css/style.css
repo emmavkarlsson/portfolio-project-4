@@ -23,6 +23,21 @@ nav {
     padding-right: 2%;
 }
 
+.pagination-nav {
+    background-color: transparent;
+}
+
+.page-link {
+    color: #aa7282;
+    border: none;
+}
+
+.page-link:hover,
+.page-link:focus {
+    color: #231e20;
+    background-color: #fff;
+}
+
 a {
     color: #aa7282;
     text-decoration: none;
@@ -41,7 +56,6 @@ a:active {
 .link-bright:active {
     color: #aa7282;
 }
-
 
 .link-dark {
     color: #231e20;
@@ -159,6 +173,10 @@ a:active {
 footer {
     background-color: #231e20;
     color: #f8f2f4;
+}
+
+button {
+    border-radius: 50px;
 }
 
 .center-buttons {
