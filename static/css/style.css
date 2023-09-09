@@ -64,14 +64,14 @@ a:active {
     font-size: 75%;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
+.page-descr {
+    padding: 1%;
+    background: linear-gradient(90deg, rgba(248,242,244,1) 0%, rgba(255,255,255,1) 50%, rgba(248,242,244,1) 100%);
+    text-align: center;
 }
 
-.card-border {
-    background-color: #fff;
-    border: 1px solid #231e20;
+.card {
+    border: none;
 }
 
 .image-container {
