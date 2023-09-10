@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="row mt-5 mb-5 justify-content-md-center">
+    <div class="row mt-5 justify-content-md-center">
         <div class="col-md-2 text-center">
             <div class="icon-container">
                 <a class="" href="{% url 'my_likes' %}"><i class="fas fa-heart profile-icons"></i></a>
@@ -53,6 +53,13 @@
             <p>Add image</p>
         </div>
     </div>
+
+    <div class="row justify-content-md-center text-center">
+        <div class="col-md-6 mt-5 mb-5">
+            <button class="btns btn-dark">
+                <a class="nav-link link-bright" href="{% url 'account_logout' %}">Logout</a>
+            </button>
+        </div>
     </div>
 </div>
 {%endblock%}
