@@ -73,3 +73,10 @@ The performance on my page is pretty slow. My guess is that it is because of lar
     - This time, I was able to create a profile, but not able to update it
     - I found out this was because I hadn't included the profile form as context in my views.py file for the profile_view.
     - After adding the context, all new users got a profile which they could update.
+
+<h2>Supported screens and browsers</h2>
+The website has been tested and works in Safari, Chrome and Firefox.
+<br><br>
+I have, through bootstrap, used responsive code for my website. Because of this, the page looks good on all kinds of screens, which I have also tested in the chrome inspector.
+<img src="docs/introductionimage.png">
+

@@ -1,10 +1,8 @@
 <h1>PhotoStream - Portfolio project 4</h1>
 The Photostream Website is a website made for photography loving people. It is a place where they can share their best photos, but also view and interact with other members photos through liking or commenting.
 
-<a href=""></a>Find the live project here. 
-IMAGE
-
-<img src="" width="75%">
+<a href="https://evk-photostream-d1447cc37dcb.herokuapp.com/">Find the live project here.</a>
+<img src="docs/introductionimage.png">
 <br><br>
 <h2>User Experience</h2>
 <h3>User Stories</h3>
@@ -225,7 +223,7 @@ therefore, I did not create a wireframe for most of the views.
 - Javascript
 - Python
 
-<h3>Frameworks and programs<h3>
+<h3>Frameworks and programs</h3>
 
 - <a href="https://getbootstrap.com/">Bootstrap</a> was used to style the page
 - <a href="https://www.djangoproject.com/">Django</a> was used as framework
@@ -239,3 +237,45 @@ therefore, I did not create a wireframe for most of the views.
 
 <h2>Testing</h2>
 <a href="TESTING.md">See all test results here</a>
+
+
+<h2>Deployment</h2>
+
+1. Github
+    - Create a new repository using the https://github.com/Code-Institute-Org/gitpod-full-template
+    - After you have created a repository, click the green GitPod button
+2. Install Django and libraries in the terminal
+    - To install Django and gunicorn, type: pip3 install 'django<4' gunicorn
+    - To install psycopg2, type: pip3 install dj_database_url==0.5.0 psycopg2
+    - To install the Cloudinary libraries, type: pip3 install dj3-cloudinary-storage
+    - Create a requirements file by typing: pip3 freeze --local > requirements.txt
+    - Create your project by typing: django-admin startproject PROJECT_NAME . (PROJECT_NAME can be whatever you'd like it to)
+    - Create the app by typing: python3 manage.py startapp APP_NAME (APP_NAME can be whatever you'd like it to)
+    - In settings.py, add 'APP_NAME' to installed apps
+    - Migrate the changes in the terminal, type: python3 manage.py runserver
+    - You can see if the app got installed by typing: 'python3 manage.py runserver', without quotations marks, of course, in the terminal. If the app has been installed, you can now see a message saying that the install worked successfully.
+3. Deploy to Heroku
+    - Create a new app in Heroku
+    - Enter a unique name, select your region and click Create App
+    - In Settings, click Reveal Confiq vars
+Click on the Create App button
+    - Add a new confiq var called 'DATABASE_URL', the value should be your ElephantSQL database url.
+    - Add a new confiq var called 'DISABLE_COLLECTSTATIC' with the value 1
+    - Set a confiq var CLOUDINARY_URL with the value of your cloudinary url
+    - Set a confiq var SECRET_KEY with a random key as value.
+    - In the settings tab, choose Python as Buildpack.
+    - In the deploy tab, scroll down to deployment method and choose GitHub, search for your repository name and connect.
+    - Deploy by either choosing Automatic deploys or manual deploys. Click Deploy Branch.
+    - In the terminal in GitHub, create a Procfile with the text 'web: gunicorn PROJECT_NAME.wsgi' (replace PROJECT_NAME with the name of your project)
+4. Final deployment
+    - Set DEBUG to False
+    - Add this code under DEBUG = False -> X_FRAME_OPTIONS = 'SAMEORIGIN'
+    - In Heroku, Settings, reveal confiq vars - remove the DISABLE_COLLECTSTATIC variable
+
+<h2>Credits</h2>
+
+- I have used the Code Institute walkthrough project "I think, therefor I blog" as a base for this project, which has helped a great deal in creating my project and app, as well as implementing models and views.
+- I have used tutor support for issues that I wasn't able to solve myself even after troubleshooting. A special thanks to Ed who troubleshooted with me for an hour!
+- I have gotten a lot of help from the <a href="https://djangocentral.com/building-a-blog-application-with-django/">Django Central Blog</a>
+- I have gotten a lot of help from the Youtube channel <a href="https://www.youtube.com/@Codemycom">Codemy.com</a>
+- I have also gotten help and inspiration from my fellow Code Institute students in Slack!
