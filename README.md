@@ -42,5 +42,22 @@ IMAGE
     3. Add and delete users
     4. Add, update and delete categories
 
+<h2>Design</h2>
+<h3>Colors</h3>
+<img src="docs/primary_colors.png">
+<img src="docs/secondary_colors.png">
 
+- I have 3 primary colors used for the website.
+- I have 2 secondary colors used for the website, these are used when hovering over links.
+- I have also used white (#fff) as a base color under the images.
 
+<h3>Typography</h3>
+Roboto is used for the website.
+
+<h3>Wireframes</h3>
+
+- I used the design from the Code Institute walkthrough project, 'I think, therefore I blog', as a base for this site,
+therefore, I did not create a wireframe for most of the views.
+- I created this wireframe for the profile view.
+
+<img src="docs/wireframes_profile.png" width="">
