@@ -211,3 +211,8 @@ therefore, I did not create a wireframe for most of the views.
 <img src="docs/page_admin.png">
 <br><br>
 
+<h3>Future Features</h3>
+
+1. Category View: Let users see posts based on which category they belong to. This was originally meant to be a feature with a base in the Categories Page, where user could click on the selected category and get sent to a post view with the images belonging to the chosen category. For this project, there wasn't enough time to implement it, but this should definitely be a feature in the future. The categories could also be displayed as a link under the post in Featured Image, where users could get redirected to the category they have pressed.
+2. Extended User Profile: In future features, the user profile could be improved, where the user can fill out their name, contact details and other socials. 
+3. View profiles: Let users view other people's profiles. 
