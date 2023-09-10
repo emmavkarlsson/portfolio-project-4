@@ -11,8 +11,8 @@
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <button type="submit" class="btn edit-button">Update</button>
-                <button class="btn delete-button"><a href="{% url 'featured_post' post.slug %}" class="link-dark">Cancel</a></button>
+                <button type="submit" class="btns btn-pink">Update</button>
+                <button class="btns btn-dark"><a href="{% url 'featured_post' post.slug %}" class="link-bright">Cancel</a></button>
             </form>
         </div>
     </div>

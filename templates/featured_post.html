@@ -7,8 +7,8 @@
         <div class="row">
             <div class="col mt-4 mb-4 center-buttons">
                 {% if user.is_authenticated and post.publisher == user  %}
-                <a href="{% url 'edit_post' post.slug %}" class="edit-button"><i class="fas fa-pen"></i> Edit</a>
-                <a href="{% url 'delete_post' post.slug %}" class="delete-button"><i class="fas fa-trash"></i> Delete</a>
+                <a href="{% url 'edit_post' post.slug %}" class="btns btn-pink"><i class="fas fa-pen"></i> Edit</a>
+                <a href="{% url 'delete_post' post.slug %}" class="btns btn-dark"><i class="fas fa-trash"></i> Delete</a>
                 {% endif %}
             </div>
         </div>
@@ -46,9 +46,9 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart fp-icons"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart fp-icons"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
@@ -102,7 +102,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn mt-3 btn-submit">Submit</button>
+                    <button type="submit" class="mt-3 btns btn-pink">Submit</button>
                 </form>
                 {% endif %}
             </div>
