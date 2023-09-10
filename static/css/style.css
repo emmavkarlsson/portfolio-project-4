@@ -84,12 +84,12 @@ a:active {
     text-align: center;
 }
 
-.card {
-    border: none;
-}
-
 .image-container {
     position: relative;
+}
+
+.card {
+    border: none;
 }
 
 .card-img-top {
@@ -141,12 +141,6 @@ a:active {
     border-radius: 50%;
     object-fit: cover;
 }
-
-/* .icon-container {
-    width: 150px;
-    height: 150px;
-    background-color: white;
-} */
 
 footer {
     background-color: #231e20;
