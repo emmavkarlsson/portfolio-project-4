@@ -2,6 +2,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 <div class="container">
     <div class="row justify-content-md-center">
@@ -14,9 +15,7 @@
             {% if user.profile.profile_picture %}
             <img class="profile-picture" src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" />
             {% else %}
-            <img class="profile-picture"
-                src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1693860102/p8vwzctkppf7vm6njgpv.jpg"
-                alt="Profile Picture" />
+            <img class="profile-picture" src="{% static 'images/profile_placeholder.webp' %}" alt="Profile Picture" />
             {% endif %}
         </div>
     </div>
