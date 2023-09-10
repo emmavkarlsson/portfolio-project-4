@@ -40,6 +40,57 @@ The Photostream Website is a website made for photography loving people. It is a
     3. Add and delete users
     4. Add, update and delete categories
 
+<h3>Agile methodology</h3>
+I have used the Agile methodology to create the functionality of my project, by using GitHub projects. The project can be found <a href="https://github.com/users/emmavkarlsson/projects/3/views/1">here</a>.
+
+<h2>Database models</h2>
+<img src="docs/overview_models.png"><br>
+
+1. User, which contains:
+    - user ID
+    - username
+    - email
+    - password
+
+<img src="docs/user_model.png"><br>
+
+2. Post, which contains:
+    - post ID
+    - title
+    - slug
+    - publisher (ForeignKey)
+    - photopost
+    - description
+    - created_on
+    - likes
+    - status
+    - categories
+
+<img src="docs/post_model.png"><br>
+
+3. Profile, which contains:
+    - profile ID
+    - user
+    - profile_picture
+
+<img src="docs/profile_model.png"><br>
+
+4. Categories, which contains:
+    - category ID
+    - name
+    - coverphoto
+
+<img src="docs/categories_model.png"><br>
+
+5. Comment, which contains:
+    - comment ID
+    - post (ForeignKey)
+    - email
+    - body
+    - created_on
+
+<img src="docs/comment_model.png"><br>
+
 <h2>Design</h2>
 <h3>Colors</h3>
 <img src="docs/primary_colors.png">
