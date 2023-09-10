@@ -19,9 +19,9 @@
             <div class="d-none d-md-block col-md-12">
                 {% if "placeholder" in post.photopost.url %}
                 <img src="https://res.cloudinary.com/emmavkarlsson/image/upload/v1693860102/p8vwzctkppf7vm6njgpv.jpg"
-                    width="100%">
+                    width="100%" alt="posted-image">
                 {% else %}
-                <img src=" {{ post.photopost.url }}" width="100%">
+                <img src=" {{ post.photopost.url }}" width="100%" alt="posted-image">
                 {% endif %}
             </div>
             <div class="col-md-12">
