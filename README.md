@@ -237,3 +237,5 @@ therefore, I did not create a wireframe for most of the views.
 - <a href="https://fonts.google.com">Google Fonts</a> was used to get fonts
 - <a href="https://fontawesome.com/">FontAwersome</a> was used for icons
 
+<h2>Testing</h2>
+<a href="TESTING.md">See all test results here</a>
