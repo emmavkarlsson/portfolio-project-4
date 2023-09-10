@@ -85,7 +85,7 @@ def category_view(request, cats):
     """
     Renders views for the different categories
     """
-    category_posts = Post.objects.filter(categories__name__contains=cats, status=1)
+    category_posts = Post.objects.filter(categories__name__contains=cats, status=1)  # noqa
     return render(request, 'category.html', {
         'cats': cats.title(), 'category_posts': category_posts})
 

@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %}
+{% block content %}
 {% load crispy_forms_tags %}
 
 <div>
@@ -8,7 +8,8 @@
             <div class="col mt-4 mb-4 center-buttons">
                 {% if user.is_authenticated and post.publisher == user  %}
                 <a href="{% url 'edit_post' post.slug %}" class="btns btn-pink"><i class="fas fa-pen"></i> Edit</a>
-                <a href="{% url 'delete_post' post.slug %}" class="btns btn-dark"><i class="fas fa-trash"></i> Delete</a>
+                <a href="{% url 'delete_post' post.slug %}" class="btns btn-dark"><i class="fas fa-trash"></i>
+                    Delete</a>
                 {% endif %}
             </div>
         </div>
@@ -46,9 +47,11 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
@@ -80,8 +83,8 @@
                         </span> commented:
                         <span style="float: right;">
                             {% if comment.name == user.username or post.publisher == user %}
-                                <a href="{% url 'delete_comment' comment.id %}" aria-label="Delete Comment"><i
-                                        class="fas fa-trash"></i></a>
+                            <a href="{% url 'delete_comment' comment.id %}" aria-label="Delete Comment"><i
+                                    class="fas fa-trash"></i></a>
                             {% endif %}
                         </span>
                     </p>

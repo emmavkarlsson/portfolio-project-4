@@ -2,6 +2,8 @@ body {
     background-color: #f8f2f4;
 }
 
+/* Navbar */
+
 nav {
     background-color: #231e20;
     color: #f8f2f4;
@@ -27,16 +29,8 @@ nav {
     background-color: transparent;
 }
 
-.page-link {
-    color: #aa7282;
-    border: none;
-}
 
-.page-link:hover,
-.page-link:focus {
-    color: #231e20;
-    background-color: #fff;
-}
+/* Links*/
 
 a {
     color: #aa7282;
@@ -46,6 +40,17 @@ a {
 a:hover,
 a:active {
     color: #c9a2ad;
+}
+
+.page-link {
+    color: #aa7282;
+    border: none;
+}
+
+.page-link:hover,
+.page-link:focus {
+    color: #231e20;
+    background-color: #fff;
 }
 
 .link-bright {
@@ -66,6 +71,8 @@ a:active {
     color: #f8f2f4;
 }
 
+/* Text alterations */
+
 .active {
     font-weight: 700;
 }
@@ -77,6 +84,8 @@ a:active {
 .text-small {
     font-size: 75%;
 }
+
+/* Styling for posts */
 
 .page-descr {
     padding: 1%;
@@ -131,6 +140,8 @@ a:active {
     background-color: #fff;
 }
 
+/* Profile */
+
 .profile-icons {
     font-size: 500%;
 }
@@ -140,11 +151,6 @@ a:active {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-}
-
-footer {
-    background-color: #231e20;
-    color: #f8f2f4;
 }
 
 /* Buttons */
@@ -198,6 +204,13 @@ footer {
     color: #aa7282;
     border: none;
     background: transparent;
+}
+
+/* Footer */
+
+footer {
+    background-color: #231e20;
+    color: #f8f2f4;
 }
 
 /* media queries */
