@@ -152,7 +152,7 @@ class MyPosts(generic.ListView):
     template_name = 'my_posts.html'
 
     def get_queryset(self):
-        return Post.objects.filter(publisher=self.request.user)
+        return Post.objects.filter(status=1, publisher=self.request.user)
 
 
 class MyLikedPosts(generic.ListView):
