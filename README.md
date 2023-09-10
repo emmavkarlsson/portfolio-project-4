@@ -216,3 +216,24 @@ therefore, I did not create a wireframe for most of the views.
 1. Category View: Let users see posts based on which category they belong to. This was originally meant to be a feature with a base in the Categories Page, where user could click on the selected category and get sent to a post view with the images belonging to the chosen category. For this project, there wasn't enough time to implement it, but this should definitely be a feature in the future. The categories could also be displayed as a link under the post in Featured Image, where users could get redirected to the category they have pressed.
 2. Extended User Profile: In future features, the user profile could be improved, where the user can fill out their name, contact details and other socials. 
 3. View profiles: Let users view other people's profiles. 
+
+<h2>Technologies</h2>
+<h3>Languages</h3>
+
+- HTML5
+- CSS
+- Javascript
+- Python
+
+<h3>Frameworks and programs<h3>
+
+- <a href="https://getbootstrap.com/">Bootstrap</a> was used to style the page
+- <a href="https://www.djangoproject.com/">Django</a> was used as framework
+- <a href="https://github.com/">Github</a> was used to store the code
+- <a href="https://www.gitpod.io/">GitPod</a> was used to create the site and push to GitHub
+- <a href="https://www.elephantsql.com/">ElephantSQL</a> was used to store the database
+- <a href="https://www.heroku.com/">Heroku</a> is used to host the site
+- <a href="https://cloudinary.com/">Cloudinary</a> is used to store the images
+- <a href="https://fonts.google.com">Google Fonts</a> was used to get fonts
+- <a href="https://fontawesome.com/">FontAwersome</a> was used for icons
+
