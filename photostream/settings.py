@@ -31,6 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = ['8000-emmavkarlss-portfoliopr-fnxbmyqs6n2.ws-eu104.gitpod.io', 'evk-photostream-d1447cc37dcb.herokuapp.com', 'localhost']  # noqa
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
